@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://allaroundjava.com/api-first-rest-service-swagger/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<title>Api First approach to building REST service with Swagger | allAroundJava</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v12.5.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Learn to build Spring Boot REST controllers with Api First approach and Swagger tools using Open Api and Maven. Learn to construct an Open Api YAML file.">
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://allaroundjava.com/api-first-rest-service-swagger/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Api First approach to building REST service with Swagger | allAroundJava">
+<meta property="og:description" content="Learn to build Spring Boot REST controllers with Api First approach and Swagger tools using Open Api and Maven. Learn to construct an Open Api YAML file.">
+<meta property="og:url" content="https://allaroundjava.com/api-first-rest-service-swagger/">
+<meta property="og:site_name" content="allAroundJava">
+<meta property="article:publisher" content="https://www.facebook.com/allAroundJava/">
+<meta property="article:section" content="REST">
+<meta property="article:published_time" content="2019-10-07T14:09:59+00:00">
+<meta property="article:modified_time" content="2019-10-08T06:40:57+00:00">
+<meta property="og:updated_time" content="2019-10-08T06:40:57+00:00">
+<meta property="og:image" content="https://allaroundjava.com/wp-content/uploads/2019/10/apple-black-and-white-black-and-white-169573.jpg">
+<meta property="og:image:secure_url" content="https://allaroundjava.com/wp-content/uploads/2019/10/apple-black-and-white-black-and-white-169573.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="853">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Learn to build Spring Boot REST controllers with Api First approach and Swagger tools using Open Api and Maven. Learn to construct an Open Api YAML file.">
+<meta name="twitter:title" content="Api First approach to building REST service with Swagger | allAroundJava">
+<meta name="twitter:image" content="https://allaroundjava.com/wp-content/uploads/2019/10/apple-black-and-white-black-and-white-169573.jpg">
+<script type="text/javascript" async="" src="./apifirst_files/analytics.js"></script><script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://allaroundjava.com/#website","url":"https://allaroundjava.com/","name":"allAroundJava","publisher":{"@id":"https://allaroundjava.com/#/schema/person/"},"potentialAction":{"@type":"SearchAction","target":"https://allaroundjava.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://allaroundjava.com/api-first-rest-service-swagger/#primaryimage","url":"https://allaroundjava.com/wp-content/uploads/2019/10/apple-black-and-white-black-and-white-169573.jpg","width":1280,"height":853,"caption":"Laptop with Code"},{"@type":"WebPage","@id":"https://allaroundjava.com/api-first-rest-service-swagger/#webpage","url":"https://allaroundjava.com/api-first-rest-service-swagger/","inLanguage":"en","name":"Api First approach to building REST service with Swagger | allAroundJava","isPartOf":{"@id":"https://allaroundjava.com/#website"},"primaryImageOfPage":{"@id":"https://allaroundjava.com/api-first-rest-service-swagger/#primaryimage"},"datePublished":"2019-10-07T14:09:59+00:00","dateModified":"2019-10-08T06:40:57+00:00","description":"Learn to build Spring Boot REST controllers with Api First approach and Swagger tools using Open Api and Maven. Learn to construct an Open Api YAML file."},{"@type":"Article","@id":"https://allaroundjava.com/api-first-rest-service-swagger/#article","isPartOf":{"@id":"https://allaroundjava.com/api-first-rest-service-swagger/#webpage"},"author":{"@id":"https://allaroundjava.com/#/schema/person/84ed89bb050fc62d97fe73c597ea53a0"},"headline":"Api First approach to building REST service with Swagger","datePublished":"2019-10-07T14:09:59+00:00","dateModified":"2019-10-08T06:40:57+00:00","commentCount":0,"mainEntityOfPage":{"@id":"https://allaroundjava.com/api-first-rest-service-swagger/#webpage"},"publisher":{"@id":"https://allaroundjava.com/#/schema/person/"},"image":{"@id":"https://allaroundjava.com/api-first-rest-service-swagger/#primaryimage"},"articleSection":"REST"},{"@type":["Person"],"@id":"https://allaroundjava.com/#/schema/person/84ed89bb050fc62d97fe73c597ea53a0","name":"Adam Stankowski","image":{"@type":"ImageObject","@id":"https://allaroundjava.com/#authorlogo","url":"https://secure.gravatar.com/avatar/83197d787dbdf2bdd5ae5c562501b6ed?s=96&d=mm&r=g","caption":"Adam Stankowski"},"sameAs":[]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="allAroundJava » Api First approach to building REST service with Swagger Comments Feed" href="https://allaroundjava.com/api-first-rest-service-swagger/feed/">
+<link rel="stylesheet" id="marketers-delight-google-fonts-css" href="./apifirst_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="marketers-delight-design-css" href="./apifirst_files/design.css" type="text/css" media="all">
+<link rel="stylesheet" id="marketers-delight-css" href="./apifirst_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="./apifirst_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="cookie-consent-style-css" href="./apifirst_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="md-child-theme-css" href="./apifirst_files/style(2).css" type="text/css" media="all">
+<link rel="stylesheet" id="prismCSS-css" href="./apifirst_files/prism.css" type="text/css" media="all">
+<script type="text/javascript" src="./apifirst_files/jquery.js"></script>
+<script type="text/javascript" src="./apifirst_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./apifirst_files/prism.js"></script>
+<link rel="https://api.w.org/" href="https://allaroundjava.com/wp-json/">
+<link rel="alternate" type="application/json+oembed" href="https://allaroundjava.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fallaroundjava.com%2Fapi-first-rest-service-swagger%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://allaroundjava.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fallaroundjava.com%2Fapi-first-rest-service-swagger%2F&amp;format=xml">
+<style id="ctcc-css" type="text/css" media="screen">
+				#catapult-cookie-bar {
+					box-sizing: border-box;
+					max-height: 0;
+					opacity: 0;
+					z-index: 99999;
+					overflow: hidden;
+					color: #000000;
+					position: fixed;
+					left: 0;
+					bottom: 0;
+					width: 100%;
+					background-color: #999999;
+				}
+				#catapult-cookie-bar a {
+					color: #ae2525;
+				}
+				#catapult-cookie-bar .x_close span {
+					background-color: ;
+				}
+				button#catapultCookie {
+					background:;
+					color: ;
+					border: 0; padding: 6px 9px; border-radius: 3px;
+				}
+				#catapult-cookie-bar h3 {
+					color: #000000;
+				}
+				.has-cookie-bar #catapult-cookie-bar {
+					opacity: 1;
+					max-height: 999px;
+					min-height: 30px;
+				}</style><link rel="alternate" type="application/rss+xml" title="allAroundJava Feed" href="https://allaroundjava.com/feed/">
+<style type="text/css">
+</style>
+<script async="" src="./apifirst_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-127038795-1');
+</script>
+
+</head>
+
+<body class="post-template-default single single-post postid-397 single-format-standard" itemtype="http://schema.org/WebPage">
+
+<div id="header_wrap" class="header-wrap">
+
+	
+	
+		<header id="header" class="header header-standard" itemscope="" itemtype="http://schema.org/WPHeader">
+			<div class="inner">
+
+				
+			<span id="header-menu-trigger" class="header-menu-trigger md-icon md-icon-menu"></span>
+	
+
+	
+	
+		
+	
+
+			<p class="logo" itemprop="headline">
+			<a href="https://allaroundjava.com/" class="site-title" rel="home">allAroundJava</a>
+		</p>
+	
+
+
+	<div id="header-menu" class="header-menu-wrap">
+
+		
+		<nav class="header-menu" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+
+			<ul id="menu-top-menu" class="menu menu-header"><li id="menu-item-21" class="orange button menu-item menu-item-type-post_type menu-item-object-page menu-item-21"><a href="https://allaroundjava.com/hello/" itemprop="url"><span class="menu-item-title" itemprop="name">Start Here</span></a></li>
+<li id="menu-item-57" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-57"><a href="https://allaroundjava.com/" itemprop="url"><span class="menu-item-title" itemprop="name">Home</span></a></li>
+<li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="https://allaroundjava.com/about/" itemprop="url"><span class="menu-item-title" itemprop="name">About blog</span></a></li>
+</ul>
+		</nav>
+
+		
+	</div>
+
+
+			</div>
+		</header>
+
+	
+	
+</div>
+
+
+	<div id="content-box" class="content-box is-content-box is-full-width format-text-main">
+
+	<main id="content" class="content inner" role="main">
+
+		
+			<article id="content-397" class="post-397 post type-post status-publish format-standard has-post-thumbnail hentry category-rest" itemscope="" itemtype="http://schema.org/Article">
+
+	
+	
+<div id="content-397-schema">
+
+	
+	<meta itemscope="" itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://allaroundjava.com/api-first-rest-service-swagger/">
+
+	<meta itemscope="" itemprop="headline" content="Api First approach to building REST service with Swagger">
+
+	<div itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+		<meta itemprop="name" content="Adam Stankowski">
+	</div>
+
+			<meta itemscope="" itemprop="image" content="https://allaroundjava.com/wp-content/uploads/2019/10/apple-black-and-white-black-and-white-169573.jpg">
+	
+	<meta itemprop="datePublished" content="2019-10-07T14:09:59+00:00">
+
+	<meta itemprop="dateModified" class="updated" content="2019-10-08 ">
+
+	<div itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization">
+
+		<meta itemprop="name" content="allAroundJava">
+
+		
+	</div>
+
+	
+</div><header class="content-item-headline content-item  featured-image-cover image-overlay  has-image  inner" style="background-image: url(&#39;https://allaroundjava.com/wp-content/uploads/2019/10/apple-black-and-white-black-and-white-169573-1024x682.jpg&#39;);">
+	<div class="block-triple">
+
+		
+<div class="byline">
+
+	
+	
+		<!-- Author -->
+
+		<span class="byline-author byline-item">
+
+			<em>by</em>
+
+			<span class="author vcard">
+				<a href="https://allaroundjava.com/author/admin/" rel="author"><span class="byline-author-name fn" itemprop="name">Adam Stankowski</span></a>
+			</span>
+
+			
+			
+		</span>
+
+	
+	
+		<!-- Date -->
+
+		<span class="byline-date byline-item byline-icon"><i class="md-icon-clock"></i> <time datetime="2019-10-07T14:09:59+00:00" itemprop="datePublished">October 7, 2019</time></span>
+
+	
+	
+	
+		<!-- Comments -->
+
+		<span class="byline-comments byline-item byline-icon"><a href="https://allaroundjava.com/api-first-rest-service-swagger/#respond"><i class="md-icon-chat"></i> 0</a></span>
+
+	
+	
+		<!-- Edit -->
+
+		
+	
+	
+</div>
+		
+			<h1 class="headline entry-title">Api First approach to building REST service with Swagger</h1>
+
+		
+		
+	</div>
+
+	
+</header>
+	
+<div class="content-item-text content-item inner block-full" itemprop="text">
+
+	
+	
+	<p>This article shows how to use <b>Open API specification and Swagger tools to build a REST service with spring boot and Maven.</b> It describes how the Open API may be used as a contract and how to use Maven to <b>generate Controller interfaces at build time with the API First Approach.</b> It also shows how to configure Swagger UI to use a <b>static Open API JSON file</b> and the reasons why you may want to do it. The complete code can be found right here on <a href="https://github.com/adamAllaround/DoctorBooking/" target="_blank" rel="noopener noreferrer">allAroundJava Github.</a></p>
+<h3>Swagger’s Open Api</h3>
+<p>Swagger’s Open API is a way to <b>describe the functionality of REST services</b> including the resources they expose, data they exchange, responses they return and many more. Open API file can serve both as a documentation or be helpful when designing the API.<br>
+It is a very convenient way of <b>exchanging API definition information between parties building and consuming the API</b> and doing so brings many benefits. For instance, thanks to Swagger tools you can quickly <b>build REST Service mocks</b> based on prepared API specification file to speed up development process.<br>
+Because this format is readable to machines, we can also use it to <b>generate our Rest Controller classes, DTO objects and more.</b><br>
+With the help of additional libraries, we can also use the Open Api definition file as helpful <b>API documentation </b>allowing to call our rest service methods and examine how they work. We will do that further in the article.</p>
+<p>The Open API definition file comes in two formats – JSON or YAML. Here’s an example of Open API YAML definition file for a REST service allowing to list and book doctor visits at a medical center. </p>
+<pre class=" language-yaml"><code class=" language-yaml"><span class="token key atrule">swagger</span><span class="token punctuation">:</span> <span class="token string">"2.0"</span>
+<span class="token key atrule">info</span><span class="token punctuation">:</span>
+  <span class="token key atrule">description</span><span class="token punctuation">:</span> "This is a specification for DoctorBooking Api. 
+  You can find out more about this application at 
+  <span class="token punctuation">[</span>htp<span class="token punctuation">:</span>//allaroundjava.com<span class="token punctuation">]</span>(http<span class="token punctuation">:</span>//allaroundjava.com)"
+  <span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">"1.0"</span>
+  <span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Doctor Booking Application"</span>
+  <span class="token key atrule">contact</span><span class="token punctuation">:</span>
+    <span class="token key atrule">email</span><span class="token punctuation">:</span> <span class="token string">"adam@allaroundjava.com"</span>
+<span class="token key atrule">host</span><span class="token punctuation">:</span> <span class="token string">"localhost:8080"</span>
+<span class="token key atrule">basePath</span><span class="token punctuation">:</span> <span class="token string">"/"</span>
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token string">"doctors"</span>
+    <span class="token key atrule">description</span><span class="token punctuation">:</span> <span class="token string">"Everything about Doctors in the system"</span>
+<span class="token key atrule">schemes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token string">"http"</span>
+<span class="token key atrule">paths</span><span class="token punctuation">:</span>
+  <span class="token key atrule">/doctors</span><span class="token punctuation">:</span>
+    <span class="token key atrule">post</span><span class="token punctuation">:</span>
+      <span class="token key atrule">tags</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token string">"doctors"</span>
+      <span class="token key atrule">summary</span><span class="token punctuation">:</span> <span class="token string">"Add a new doctor to Medical Clinic"</span>
+      <span class="token key atrule">description</span><span class="token punctuation">:</span> <span class="token string">""</span>
+      <span class="token key atrule">operationId</span><span class="token punctuation">:</span> <span class="token string">"createDoctor"</span>
+      <span class="token key atrule">consumes</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token string">"application/xml"</span>
+      <span class="token key atrule">produces</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token string">"application/xml"</span>
+      <span class="token key atrule">parameters</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">in</span><span class="token punctuation">:</span> <span class="token string">"body"</span>
+          <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token string">"DoctorDto"</span>
+          <span class="token key atrule">description</span><span class="token punctuation">:</span> <span class="token string">"Doctor object that needs to be added to the clinic"</span>
+          <span class="token key atrule">required</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+          <span class="token key atrule">schema</span><span class="token punctuation">:</span>
+            <span class="token key atrule">$ref</span><span class="token punctuation">:</span> <span class="token string">"#/definitions/DoctorDto"</span>
+      <span class="token key atrule">responses</span><span class="token punctuation">:</span>
+        <span class="token key atrule">201</span><span class="token punctuation">:</span>
+          <span class="token key atrule">description</span><span class="token punctuation">:</span> <span class="token string">"Created Doctor"</span>
+          <span class="token key atrule">schema</span><span class="token punctuation">:</span>
+            <span class="token key atrule">$ref</span><span class="token punctuation">:</span> <span class="token string">"#/definitions/DoctorDto"</span>
+        <span class="token key atrule">405</span><span class="token punctuation">:</span>
+          <span class="token key atrule">description</span><span class="token punctuation">:</span> <span class="token string">"Invalid input"</span></code></pre>
+<p>This part of the file specifies only a single resource and a single associated HTTP method. For a full reference go to <a href="https://github.com/adamAllaround/DoctorBooking/blob/master/DoctorBookingApplication/src/main/resources/swagger.yaml" target="_blank" rel="noopener noreferrer">allAroundJava’s Github.</a></p>
+<h3>Approaches to building REST services with Open API</h3>
+<p>The traditional approach to REST service development is to build your Controllers first and then use Swagger annotations to describe controllers and their methods. The fact that Open API specification is readable for human as well as machines, opens up some new possibilities.<br>
+The API first (or design first) approach bases on <b>designing the API specification first and following it with code</b> to match the specification in the next step. Prepared document is an input to both building and testing the API.<br>
+With some help from build tools like Maven, we can generate the controller interfaces, DTOs or tests at build time.<br>
+Preparing a design document first, usually leads to a <b>better overview of the structure, hence a better API design</b> and can free up some resources as it allows for mocking even before any service is physically available. In nature it’s similar to SOAP’s WSDL, but it’s much easier to build.</p>
+<h3>Building REST API with Open API Specification and Design First Approach</h3>
+<p>Utilizing this approach requires getting familiar with the Open API semantics. The format is really simple and does not require any previous experience. It’s best to observe the <a href="https://petstore.swagger.io/">Pet Store example on Swagger’s pages </a>to understand how things work. Both IntelliJ and <a href="http://editor.swagger.io/?docExpansion=none">Swagger editor</a> come as a very handy tools to prepare the document. You can view the full document which we’ll use in this article <a href="https://github.com/adamAllaround/DoctorBooking/blob/master/DoctorBookingApplication/src/main/resources/swagger.yaml">right here.</a><br>
+Once the API definition file is ready, we can use it as an input to generate our Rest Controller interfaces. </p>
+<h4>Using swagger YAML to generate interfaces with Maven</h4>
+<p>Now generating the interfaces from an API specification requires some effort as the swagger-codegen-maven-plugin lacks good documentation. Here is how the plugin configuration may look like. </p>
+<pre class=" language-xml"><code class=" language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>io.swagger<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>swagger-codegen-maven-plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>2.4.8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>executions</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>execution</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>goals</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>goal</span><span class="token punctuation">&gt;</span></span>generate<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>goal</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>goals</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>inputSpec</span><span class="token punctuation">&gt;</span></span>${project.basedir}/src/main/resources/swagger.yaml<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>inputSpec</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>language</span><span class="token punctuation">&gt;</span></span>spring<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>language</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>library</span><span class="token punctuation">&gt;</span></span>spring-boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>library</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>apiPackage</span><span class="token punctuation">&gt;</span></span>com.allaroundjava.controller<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>apiPackage</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modelPackage</span><span class="token punctuation">&gt;</span></span>com.allaroundjava.dto<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modelPackage</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>generateApis</span><span class="token punctuation">&gt;</span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>generateApis</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>generateApiTests</span><span class="token punctuation">&gt;</span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>generateApiTests</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>generateModelTests</span><span class="token punctuation">&gt;</span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>generateModelTests</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>generateApiDocumentation</span><span class="token punctuation">&gt;</span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>generateApiDocumentation</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>generateModels</span><span class="token punctuation">&gt;</span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>generateModels</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>generateSupportingFiles</span><span class="token punctuation">&gt;</span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>generateSupportingFiles</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>languageSpecificPrimitives</span><span class="token punctuation">&gt;</span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>languageSpecificPrimitives</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>typeMappings</span><span class="token punctuation">&gt;</span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>typeMapping</span><span class="token punctuation">&gt;</span></span>OffsetDateTime=java.time.LocalDateTime<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>typeMapping</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>typeMappings</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>importMappings</span><span class="token punctuation">&gt;</span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>importMapping</span><span class="token punctuation">&gt;</span></span>LocalDateTime=OffsetDateTime<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>importMapping</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>importMappings</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configOptions</span><span class="token punctuation">&gt;</span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>interfaceOnly</span><span class="token punctuation">&gt;</span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>interfaceOnly</span><span class="token punctuation">&gt;</span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>java8</span><span class="token punctuation">&gt;</span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>java8</span><span class="token punctuation">&gt;</span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dateLibrary</span><span class="token punctuation">&gt;</span></span>java8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dateLibrary</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configOptions</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>execution</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>executions</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.codehaus.mojo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>build-helper-maven-plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>3.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>executions</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>execution</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>phase</span><span class="token punctuation">&gt;</span></span>generate-sources<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>phase</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>goals</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>goal</span><span class="token punctuation">&gt;</span></span>add-source<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>goal</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>goals</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sources</span><span class="token punctuation">&gt;</span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span><span class="token punctuation">&gt;</span></span>${project.build.directory}/generated-sources/swagger/src/main/java<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>source</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sources</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>execution</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>executions</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">&gt;</span></span></code></pre>
+<p>The first plugin generates interface classes from an input YAML file. It uses settings for language and library to generate spring boot ready interfaces. <b>The files will be generated in Maven’s target directory.</b> This is the reason why we need the build-helper plugin. It will <b>use generated files as input for compilation of classes under project source directory.</b><br>
+The generated interface will look as follows. (This is only a part of the interface class)</p>
+<pre class=" language-java"><code class=" language-java"><span class="token annotation punctuation">@javax</span><span class="token punctuation">.</span>annotation<span class="token punctuation">.</span><span class="token class-name">Generated</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"io.swagger.codegen.languages.SpringCodegen"</span><span class="token punctuation">,</span> date <span class="token operator">=</span> <span class="token string">"2019-09-28T16:54:02.452+02:00"</span><span class="token punctuation">)</span>
+
+<span class="token annotation punctuation">@Api</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"doctors"</span><span class="token punctuation">,</span> description <span class="token operator">=</span> <span class="token string">"the doctors API"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">DoctorsApi</span> <span class="token punctuation">{</span>
+
+    <span class="token class-name">Logger</span> log <span class="token operator">=</span> <span class="token class-name">LoggerFactory</span><span class="token punctuation">.</span><span class="token function">getLogger</span><span class="token punctuation">(</span><span class="token class-name">DoctorsApi</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">default</span> <span class="token class-name">Optional</span> <span class="token function">getObjectMapper</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name">Optional</span><span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">default</span> <span class="token class-name">Optional</span> <span class="token function">getRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name">Optional</span><span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">default</span> <span class="token class-name">Optional</span> <span class="token function">getAcceptHeader</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">getRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>r <span class="token operator">-&gt;</span> r<span class="token punctuation">.</span><span class="token function">getHeader</span><span class="token punctuation">(</span><span class="token string">"Accept"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@ApiOperation</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"Add a new doctor to Medical Clinic"</span><span class="token punctuation">,</span> nickname <span class="token operator">=</span> <span class="token string">"createDoctor"</span><span class="token punctuation">,</span> notes <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">,</span> response <span class="token operator">=</span> <span class="token class-name">DoctorDto</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> tags<span class="token operator">=</span><span class="token punctuation">{</span> <span class="token string">"doctors"</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@ApiResponses</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token punctuation">{</span> 
+        <span class="token annotation punctuation">@ApiResponse</span><span class="token punctuation">(</span>code <span class="token operator">=</span> <span class="token number">201</span><span class="token punctuation">,</span> message <span class="token operator">=</span> <span class="token string">"Created Doctor"</span><span class="token punctuation">,</span> response <span class="token operator">=</span> <span class="token class-name">DoctorDto</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token annotation punctuation">@ApiResponse</span><span class="token punctuation">(</span>code <span class="token operator">=</span> <span class="token number">405</span><span class="token punctuation">,</span> message <span class="token operator">=</span> <span class="token string">"Invalid input"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/doctors"</span><span class="token punctuation">,</span>
+        produces <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"application/xml"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+        consumes <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"application/xml"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>POST<span class="token punctuation">)</span>
+    <span class="token keyword">default</span> <span class="token class-name">ResponseEntity</span> <span class="token function">createDoctor</span><span class="token punctuation">(</span><span class="token annotation punctuation">@ApiParam</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"Doctor object that needs to be added to the clinic"</span> <span class="token punctuation">,</span>required<span class="token operator">=</span><span class="token boolean">true</span> <span class="token punctuation">)</span>  <span class="token annotation punctuation">@Valid</span> <span class="token annotation punctuation">@RequestBody</span> <span class="token class-name">DoctorDto</span> doctorDto<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">getObjectMapper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">isPresent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">getAcceptHeader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">isPresent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">getAcceptHeader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">"application/xml"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ResponseEntity</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token function">getObjectMapper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">readValue</span><span class="token punctuation">(</span><span class="token string">"  123456789  aeiou"</span><span class="token punctuation">,</span> <span class="token class-name">DoctorDto</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">HttpStatus</span><span class="token punctuation">.</span>NOT_IMPLEMENTED<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"Couldn't serialize response for content type application/xml"</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ResponseEntity</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token class-name">HttpStatus</span><span class="token punctuation">.</span>INTERNAL_SERVER_ERROR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            log<span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span><span class="token string">"ObjectMapper or HttpServletRequest not configured in default DoctorsApi interface so no example is generated"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ResponseEntity</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token class-name">HttpStatus</span><span class="token punctuation">.</span>NOT_IMPLEMENTED<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>Now you may ask why is there a default implementation when the plugin has a setting </p>
+<pre class=" language-xml"><code class=" language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>interfaceOnly</span><span class="token punctuation">&gt;</span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>interfaceOnly</span><span class="token punctuation">&gt;</span></span></code></pre>
+<p>And this is a very good question. The swagger plugin generates default implementations whenever you decide to use Java 8 classes to generate code. Yes another very good question is – hey but </p>
+<pre class=" language-xml"><code class=" language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>java8</span><span class="token punctuation">&gt;</span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>java8</span><span class="token punctuation">&gt;</span></span></code></pre>
+<p>And that’s right. Apparently when you want to use Java 8’s time api classes, java 8 is implicitly used and hence default implementations get created. I did not succeed to find it in the documentation or work around it.</p>
+<p>Now creating a controller class is just a matter of implementing the API interface.</p>
+<pre class=" language-java"><code class=" language-java"><span class="token annotation punctuation">@RestController</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DoctorController</span> <span class="token keyword">implements</span> <span class="token class-name">DoctorsApi</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">DoctorService</span> doctorService<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">public</span> <span class="token class-name">DoctorController</span><span class="token punctuation">(</span><span class="token class-name">DoctorService</span> doctorService<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>doctorService <span class="token operator">=</span> doctorService<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">ResponseEntity</span> <span class="token function">createDoctor</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> <span class="token class-name">DoctorDto</span> doctorInput<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Doctor</span> doctor <span class="token operator">=</span> <span class="token class-name">DoctorDtoMapper</span><span class="token punctuation">.</span><span class="token function">toEntity</span><span class="token punctuation">(</span>doctorInput<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        doctorService<span class="token punctuation">.</span><span class="token function">addDoctor</span><span class="token punctuation">(</span>doctor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">DoctorDto</span> doctorDto <span class="token operator">=</span> <span class="token class-name">DoctorDtoMapper</span><span class="token punctuation">.</span><span class="token function">toDto</span><span class="token punctuation">(</span>doctor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        doctorDto<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">linkTo</span><span class="token punctuation">(</span><span class="token function">methodOn</span><span class="token punctuation">(</span><span class="token class-name">DoctorController</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDoctor</span><span class="token punctuation">(</span>doctor<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withSelfRel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">ResponseEntity</span><span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token class-name">HttpStatus</span><span class="token punctuation">.</span>CREATED<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">body</span><span class="token punctuation">(</span>doctorDto<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<h3>Testing API with Swagger – UI</h3>
+<p>Swagger provides us with a great tool called Swagger UI. It <b>presents the API in an easily readable, visual form</b> and allows to <b>test all our controller methods by calling the resource endpoints according to specification.</b> This is by no means an automated test. It requires manual triggering, but it’s a very helpful tool, especially when learning how the API works. Here’s how it looks like</p>
+<p>##Image</p>
+<p>The Swagger UI is easily enabled with a <b>Springfox Swagger UI library.</b> </p>
+<p>By default, <b>Swagger UI page, will utilize Swagger annotations on controller or interface classes to generate a JSON file,</b> used as a source of data for the page. With API First approach this seems a little odd. We already have an API specification which we can use as a source of information about our API. We’ve successfully built our YAML file before. Additionally, the annotations, auto generated with swagger-codegen tool, do not contain all the information found in our API specification file. But there’s a way to fix it. </p>
+<h4>Serving static JSON for Swagger-UI page</h4>
+<p>There is a way to <b>feed our API specification as a source of data to Swagger UI page.</b> The page can then be used to test our API against the specification.<br>
+Because Swagger UI page uses JSON as a data input, the first step is to convert our YAML file to JSON. That can be easily done in <a href="http://editor.swagger.io/?docExpansion=none">Swagger Editor</a>. The next thing is to add the Swagger UI dependency.</p>
+<pre class=" language-xml"><code class=" language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>io.springfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>springfox-swagger-ui<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>2.9.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span></code></pre>
+<p>Now here’s a tricky bit. I wasn’t able to add this dependency without configuring my project pom with spring-boot-starter-parent. Attempting to pick on spring boot libraries in versions I desired ended up in a dependency conflict around spring-plugin library. </p>
+<p>The next point is to create a Controller which will <b>enable all the standard Swagger UI endpoints.</b> By default, this is configured automatically by enabling @EnableSwagger2 annotation, but we’re trying to avoid auto configuration and we’re skipping the annotation here. </p>
+<pre class=" language-java"><code class=" language-java"><span class="token annotation punctuation">@RestController</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SwaggerController</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>GET<span class="token punctuation">,</span> 
+	path <span class="token operator">=</span> <span class="token string">"/v2/api-docs"</span><span class="token punctuation">,</span> produces <span class="token operator">=</span> <span class="token class-name">MediaType</span><span class="token punctuation">.</span>APPLICATION_JSON_VALUE<span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">Resource</span> <span class="token function">apiJsonEndpoint</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathResource</span><span class="token punctuation">(</span><span class="token string">"swagger.json"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>GET<span class="token punctuation">,</span> path <span class="token operator">=</span> <span class="token string">"/swagger-resources"</span><span class="token punctuation">,</span> 
+	produces <span class="token operator">=</span> <span class="token class-name">MediaType</span><span class="token punctuation">.</span>APPLICATION_JSON_VALUE<span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">swaggerResources</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name">ImmutableList</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token class-name">ImmutableMap</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>
+                <span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token string">"default"</span><span class="token punctuation">,</span>
+                <span class="token string">"url"</span><span class="token punctuation">,</span> <span class="token string">"/v2/api-docs"</span><span class="token punctuation">,</span>
+                <span class="token string">"location"</span><span class="token punctuation">,</span> <span class="token string">"/v2/api-docs"</span><span class="token punctuation">,</span> <span class="token comment">// this should match the endpoint exposing Swagger JSON</span>
+                <span class="token string">"swaggerVersion"</span><span class="token punctuation">,</span> <span class="token string">"2.0"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>GET<span class="token punctuation">,</span> 
+	path <span class="token operator">=</span> <span class="token string">"/swagger-resources/configuration/security"</span><span class="token punctuation">,</span> 
+	produces <span class="token operator">=</span> <span class="token class-name">MediaType</span><span class="token punctuation">.</span>APPLICATION_JSON_VALUE<span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">swagerSecurityConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name">ImmutableList</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token class-name">ImmutableMap</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>
+                <span class="token string">"apiKeyVehicle"</span><span class="token punctuation">,</span> <span class="token string">"header"</span><span class="token punctuation">,</span>
+                <span class="token string">"scopeSeparator"</span><span class="token punctuation">,</span> <span class="token string">","</span><span class="token punctuation">,</span>
+                <span class="token string">"apiKeyName"</span><span class="token punctuation">,</span> <span class="token string">"api_key"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>GET<span class="token punctuation">,</span> 
+	path <span class="token operator">=</span> <span class="token string">"/swagger-resources/configuration/ui"</span><span class="token punctuation">,</span> 
+	produces <span class="token operator">=</span> <span class="token class-name">MediaType</span><span class="token punctuation">.</span>APPLICATION_JSON_VALUE<span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">swaggerUiConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"{\"deepLinking\":true,"</span> <span class="token operator">+</span>
+                <span class="token string">"\"displayOperationId\":false,"</span> <span class="token operator">+</span>
+                <span class="token string">"\"defaultModelsExpandDepth\":1,"</span> <span class="token operator">+</span>
+                <span class="token string">"\"defaultModelExpandDepth\":1,"</span> <span class="token operator">+</span>
+                <span class="token string">"\"defaultModelRendering\":\"example\","</span> <span class="token operator">+</span>
+                <span class="token string">"\"displayRequestDuration\":false,"</span> <span class="token operator">+</span>
+                <span class="token string">"\"docExpansion\":\"none\","</span> <span class="token operator">+</span>
+                <span class="token string">"\"filter\":false,"</span> <span class="token operator">+</span>
+                <span class="token string">"\"operationsSorter\":\"alpha\","</span> <span class="token operator">+</span>
+                <span class="token string">"\"showExtensions\":false,"</span> <span class="token operator">+</span>
+                <span class="token string">"\"tagsSorter\":\"alpha\","</span> <span class="token operator">+</span>
+                <span class="token string">"\"validatorUrl\":\"\","</span> <span class="token operator">+</span>
+                <span class="token string">"\"apisSorter\":\"alpha\","</span> <span class="token operator">+</span>
+                <span class="token string">"\"jsonEditor\":false,"</span> <span class="token operator">+</span>
+                <span class="token string">"\"showRequestHeaders\":false,"</span> <span class="token operator">+</span>
+                <span class="token string">"\"supportedSubmitMethods\":[\"get\",\"put\",\"post\",\"delete\",\"options\",\"head\",\"patch\",\"trace\"]}"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The first endpoint is the one where we <b>expose a static resource</b> – our swagger.json file, which describes the REST API. The remaining three endpoints are standard Swagger UI endpoints.<br>
+The final part is to configure view controllers and resource handlers. </p>
+<pre class=" language-java"><code class=" language-java"><span class="token annotation punctuation">@Configuration</span>
+<span class="token annotation punctuation">@EnableWebMvc</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SwaggerConfig</span> <span class="token keyword">implements</span> <span class="token class-name">WebMvcConfigurer</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"${app.swagger-ui.redirectPrefix}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> redirectPrefix<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addViewControllers</span><span class="token punctuation">(</span><span class="token class-name">ViewControllerRegistry</span> registry<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        registry<span class="token punctuation">.</span><span class="token function">addRedirectViewController</span><span class="token punctuation">(</span>redirectPrefix <span class="token operator">+</span> <span class="token string">"/v2/api-docs"</span><span class="token punctuation">,</span> <span class="token string">"/v2/api-docs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        registry<span class="token punctuation">.</span><span class="token function">addRedirectViewController</span><span class="token punctuation">(</span>
+                redirectPrefix <span class="token operator">+</span> <span class="token string">"/swagger-resources/configuration/ui"</span><span class="token punctuation">,</span> <span class="token string">"/swagger-resources/configuration/ui"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        registry<span class="token punctuation">.</span><span class="token function">addRedirectViewController</span><span class="token punctuation">(</span>
+                redirectPrefix <span class="token operator">+</span> <span class="token string">"/swagger-resources/configuration/security"</span><span class="token punctuation">,</span> <span class="token string">"/swagger-resources/configuration/security"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        registry<span class="token punctuation">.</span><span class="token function">addRedirectViewController</span><span class="token punctuation">(</span>redirectPrefix <span class="token operator">+</span> <span class="token string">"/swagger-resources"</span><span class="token punctuation">,</span> <span class="token string">"/swagger-resources"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addResourceHandlers</span><span class="token punctuation">(</span><span class="token class-name">ResourceHandlerRegistry</span> registry<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        registry<span class="token punctuation">.</span><span class="token function">addResourceHandler</span><span class="token punctuation">(</span><span class="token string">"/"</span> <span class="token operator">+</span> redirectPrefix <span class="token operator">+</span> <span class="token string">"/swagger-ui.html**"</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addResourceLocations</span><span class="token punctuation">(</span><span class="token string">"classpath:/META-INF/resources/swagger-ui.html"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        registry<span class="token punctuation">.</span><span class="token function">addResourceHandler</span><span class="token punctuation">(</span><span class="token string">"/"</span> <span class="token operator">+</span> redirectPrefix <span class="token operator">+</span> <span class="token string">"/webjars/**"</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addResourceLocations</span><span class="token punctuation">(</span><span class="token string">"classpath:/META-INF/resources/webjars/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>And the Swagger UI page with JSON being our API specification is served right away under [service root]/[redirect-prefix]/swagger-ui.html.<br>
+If you need more help serving a static JSON as a data feed for Swagger UI page, please use <a href="https://dzone.com/articles/overcoming-swagger-annotation-overload-by-switchin" target="_blank" rel="noopener noreferrer">this DZONE tutorial.</a> Above instructions were based on it. </p>
+<p>Here’s some more interesting articles around REST:</p>
+<div class="alert">
+<ul>
+<li>Full code for <a href="https://github.com/adamAllaround/DoctorBooking/tree/develop" target="_blank" title="Rest Controller tests github" rel="noopener noreferrer">Doctor Booking project</a>, which is a background for this article.
+                </li>
+<li><a href="https://allaroundjava.com/what-is-rest-when-is-service-restful/" target="_blank" title="What is REST" rel="noopener noreferrer">REST approach fundamentals</a></li>
+<li>A deep dive on<a href="https://allaroundjava.com/unit-testing-spring-rest-controllers-mockmvc/" target="_blank" title="Unit testing REST controllers" rel="noopener noreferrer"> Unit Testing Rest Controllers</a></li>
+<li>REST Controller <a href="https://allaroundjava.com/rest-controller-integration-testing/" target="_blank" title="Unit testing REST controllers" rel="noopener noreferrer">integration testing</a></li>
+</ul>
+</div>
+
+</div>
+</article>	
+
+		
+				<div id="comments" class="comments content-item inner">
+			<div class="block-full">
+				
+
+<!-- Comment Form -->
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://allaroundjava.com/api-first-rest-service-swagger/#respond" style="display:none;">Cancel</a></small></h3><form action="https://allaroundjava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="397" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="24dab83d35"></p><p style="display: none;"></p><input type="hidden" id="ak_js" name="ak_js" value="1578946366241"></form>	</div><!-- #respond -->
+				</div>
+		</div>
+	
+	<div class="page-nav inner content-item">
+		<div class="block">
+
+			<p class="previous mb-half"><span>Previous Post: </span><a href="https://allaroundjava.com/rest-controller-integration-testing/" rel="prev">Spring Boot REST Controller Integration Testing</a></p>
+			<p class="next"><span>Next Post: </span><a href="https://allaroundjava.com/securing-rest-api-with-spring-security/" rel="next">Securing REST Api with Spring Security</a></p>
+		</div>
+	</div>
+
+
+		<div id="md_share" class="md-share-float inline side-v is-sticky">
+			
+		<div class="md-share ">
+
+			
+				<a href="https://twitter.com/intent/tweet?text=Api+First+approach+to+building+REST+service+with+Swagger&amp;url=https%3A%2F%2Fallaroundjava.com%2Fapi-first-rest-service-swagger%2F" class="share-button share-button-twitter font-main" style="background-color: #1da1f2; width: 33.333333333333%;" onclick="window.open(this.href, &#39;twitterwindow&#39;,&#39;left=100,top=150,width=600,height=300,toolbar=0,resizable=1&#39;);return false;">
+
+					<span class="share-icon"><i class="md-icon-twitter"></i></span>
+
+					<span class="share-text close-on-mobile">Tweet This</span>
+
+				</a>
+
+			
+				<a href="https://www.facebook.com/allAroundJava/" class="share-button share-button-facebook font-main" style="background-color: #3b5998; width: 33.333333333333%;" target="_blank">
+
+					<span class="share-icon"><i class="md-icon-facebook-squared"></i></span>
+
+					<span class="share-text close-on-mobile">Share This</span>
+
+				</a>
+
+			
+				<a href="https://allaroundjava.com/feed/" class="share-button share-button-rss font-main" style="background-color: #FF9900; width: 33.333333333333%;" target="_blank">
+
+					<span class="share-icon"><i class="md-icon-rss"></i></span>
+
+					<span class="share-text close-on-mobile">Subscribe</span>
+
+				</a>
+
+			
+		</div>
+
+			</div>
+
+	
+	</main>
+
+	
+</div>
+
+
+	<footer class="footer format-text-main" itemscope="" itemtype="http://schema.org/WPFooter">
+		<div class="inner">
+
+			
+	<div class="footer-columns mb-double">
+
+		
+			
+				<div class="col1">
+					<div id="custom_html-2" class="widget_text widget widget_custom_html mb-double"><div class="textwidget custom-html-widget"><p style="margin-bottom: 10px;">Copyright © 2018 allAroundJava</p>
+			<span><a href="https://allaroundjava.com/privacy-policy/" title="Privacy Policy">Privacy Policy</a></span></div></div>				</div>
+
+			
+		
+			
+		
+			
+		
+	</div>
+
+
+		</div>
+	</footer>
+
+
+
+<script type="text/javascript" src="./apifirst_files/apollo.js"></script>
+<script type="text/javascript" src="./apifirst_files/comment-reply.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var ctcc_vars = {"expiry":"30","method":"1","version":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./apifirst_files/uk-cookie-consent-js.js"></script>
+<script type="text/javascript" src="./apifirst_files/share.js"></script>
+<script type="text/javascript" src="./apifirst_files/wp-embed.min.js"></script>
+<script async="async" type="text/javascript" src="./apifirst_files/form.js"></script>
+			
+				<script type="text/javascript">
+					jQuery(document).ready(function($){
+												if(!catapultReadCookie("catAccCookies")){ // If the cookie has not been set then show the bar
+							$("html").addClass("has-cookie-bar");
+							$("html").addClass("cookie-bar-bottom-bar");
+							$("html").addClass("cookie-bar-bar");
+													}
+																	});
+				</script>
+			
+			<div id="catapult-cookie-bar" class=""><div class="ctcc-inner "><span class="ctcc-left-side">This website uses cookies to function properly and to assist in advertising, analytical and social functionalities. More information about handling cookies can be found in <a class="ctcc-more-info-link" tabindex="0" target="_blank" href="https://allaroundjava.com/privacy-policy/">Privacy Policy</a></span><span class="ctcc-right-side"><button id="catapultCookie" tabindex="0" onclick="catapultAcceptCookies();">Okay</button></span></div><!-- custom wrapper class --></div><!-- #catapult-cookie-bar -->
+					<script>
+				document.getElementById( 'header-menu-trigger' ).onclick = function( e ) {
+					apollo.toggleClass( document.getElementById( 'header' ), 'has-mobile-menu' );
+					apollo.toggleClass( this, 'md-icon-cancel' );
+				}
+			</script>
+		
+	
+
+</body></html>

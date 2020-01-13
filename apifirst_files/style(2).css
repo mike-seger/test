@@ -1,0 +1,78 @@
+/*
+	Theme Name:     My MD Child Theme
+	Theme URI:      http://mydomain.com/
+	Description:    A custom child theme for my site.
+	Author:         My name
+	Author URI:     https://mydomain.com/
+	Template:       marketers-delight
+	Version:        1.3
+*/
+
+
+/* LINKS */
+
+a {
+	color: #ae2525;
+	text-decoration: none;
+}
+
+button.orange-dark a, button.orange-dark a, .button.orange-dark, .button.orange-dark a { background-color: #ff5000; }
+
+.format-text-main .headline a, .format-text-main h1 a, .format-text-main h2 a {
+	color: #EB8928;
+}
+
+.format-text-main .button {
+	font-weight: 600;
+}
+
+.menu-item a {
+	font-weight: 600;
+}
+.menu-header > .current-menu-item > a {
+	color: inherit;
+}
+
+.hello-content {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.hello-column {
+	margin-bottom: 36px;
+}
+
+div.hello-column a {
+    border: none;
+}
+
+.email-form button {
+	font-weight: bold;
+}
+
+table.aajTable {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-collapse: collapse;
+  border-width: 2px;
+  border-color: #75aa5d;
+  border-style: solid;
+  color: #000000;
+}
+
+table.aajTable td, table.aajTable th {
+  border-width: 2px;
+  border-color: #75aa5d;
+  border-style: solid;
+  padding: 5px;
+}
+
+table.aajTable th {
+  background-color: #75aa5d;
+        color:#FFFFFF;
+}
+
+div.code-toolbar pre {
+	padding-top:0;
+}
+
